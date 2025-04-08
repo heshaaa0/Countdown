@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Launch</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    #launchBtn {
+      font-size: 5rem;
+      padding: 40px 80px;
+      background-color: #00ff00;
+      color: #000;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 0 30px #00ff00;
+      cursor: pointer;
+    }
+
+    #countdownVideo {
+      display: none;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="launchBtn">LAUNCH</button>
+
+  <!-- Replace 'countdown.mp4' with your actual video file -->
+  <video id="countdownVideo" autoplay muted playsinline>
+    <source src="countdown.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <script>
+    const launchBtn = document.getElementById("launchBtn");
+    const video = document.getElementById("countdownVideo");
+
+    launchBtn.addEventListener("click", () => {
+      launchBtn.style.display = "none";
+      video.style.display = "block";
+      video.play();
+    });
+  </script>
+
+</body>
+</html>
